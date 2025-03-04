@@ -27,7 +27,7 @@
     --color-violet: #343045;
     --color-light: #fff;
     --gradient-dark: radial-gradient(circle, rgba(67,61,96,1) 0%, rgba(33,30,46,1) 100%);
-    --gradient-light: linear-gradient(180deg, rgba(129,118,175,1) 0%, rgba(192,183,232,1) 100%);
+    --gradient-light: linear-gradient(90deg, #8176af 0%, #c0b7e8 100%);
 
     --border-radius: 40px;
     --border: 2px solid #fff;
@@ -46,9 +46,29 @@ body {
     background-color: var(--color-violet);
 }
 
+a,
+button,
+input,
+textarea,
+svg * {
+    transition-duration: 0.2s;
+}
+
 a {
     text-decoration: none;
     color: var(--color-light);
+}
+
+.button {
+    height: 48px;
+    padding-inline: 36px;
+    border: none;
+    border-radius: var(--border-radius);
+    background: linear-gradient(90deg, #8176af 0%, #c0b7e8 100%);
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
 }
 
 .container {
@@ -57,5 +77,83 @@ a {
     margin-inline: auto;
 }
 
+.header, .header-logo, .header-nav-list, .header-actions {
+    display: flex;
+}
+
+.header {
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 50px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo-image {
+    min-width: 69px;
+    aspect-ratio: 1
+}
+
+.header-logo-name-image {
+    min-width: 46px;
+}
+
+.header-logo {
+    column-gap: 15px;
+}
+
+.header-nav-list {
+    column-gap: 40px;
+}
+
+.header-nav-link:hover {
+    transform: scale(1.05);
+}
+
+.header-actions {
+    column-gap: 40px;
+}
+
+.header-contact-button {
+    border: var(--border);
+    border-radius: 40px;
+    background: none;
+    background-color: transparent;
+    color: var(--color-light)
+}
+
+.header-burger-button {
+    display: none;
+    width: 33px;
+    height: 26px;
+}
+
+.header-burger-button-line {
+    display: inline-flex;
+    width: 33px;
+    height: 4px;
+    background: var(--gradient-light);
+    border-radius: var(--border-radius);
+}
+
+.line-center {
+    width: 24px;
+}
 
 
+
+
+
+
+@media (max-width: 767px) {
+    .header-nav, .header-actions {
+        display: none;
+    }
+
+    .header-burger-button {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        row-gap: 7px;
+    }
+}
